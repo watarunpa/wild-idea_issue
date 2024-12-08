@@ -1,10 +1,19 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <title>入力画面</title>
 </head>
+
 <body>
-    Hello World！    
+    <h1>見出し</h1>
+    <form method="post" action="check" th:action="@{chkScreen}" th:object="${checkForm}">
+        <p>4桁の整数を入力して下さい</p>
+        <input type="text" name="number">
+        <p style="color: red" th:errors="${checkForm.number}" class="error">テストエラーメッセージ</p>
+        <input type="submit" value="確認画面へ">
+    </form>  
 </body>
+
 </html>
