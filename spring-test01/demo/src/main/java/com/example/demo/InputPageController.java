@@ -31,7 +31,10 @@ public class InputPageController {
         }
 
         String number = checkForm.getNumber();
-        String name = "テスト名";
+
+        TesService tesService = new TesServiceImpl();
+        String name = tesService.findByNo(number);
+
         model.addAttribute("number", number);
         model.addAttribute("name", name);
         return "check";
