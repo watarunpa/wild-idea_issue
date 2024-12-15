@@ -10,6 +10,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class InputPageController {
 
+    private final TesService tesService;
+
+    // TesServiceのDI適用
+    public InputPageController(TesService tesService) {
+        this.tesService = tesService;
+    }
+
     @ModelAttribute
     public CheckForm setUpForm() {
         return new CheckForm();
@@ -31,8 +38,6 @@ public class InputPageController {
         }
 
         String number = checkForm.getNumber();
-
-        TesService tesService = new TesServiceImpl();
         String name = tesService.findByNo(number);
 
         model.addAttribute("number", number);
