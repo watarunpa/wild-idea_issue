@@ -10,9 +10,9 @@ public class TesRepositoryImpl implements TesRepository {
 
         String name;
         if (number.equals("1000")) {
-            name = "DI なし いち";
+            name = "DI あり いち";
         } else {
-            name = "DI なし に";
+            name = "DI あり に";
         }
 
         return name;
